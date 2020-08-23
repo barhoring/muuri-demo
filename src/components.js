@@ -16,6 +16,23 @@ export const Item = ({ color, width, height, title, remove }) => (
   </div>
 );
 
+// Tweet component.
+export const Tweet = ({ color, width, height, title, remove }) => (
+  <div className={`item h${height} w${width} ${color}`}>
+    <div className="item-content">
+      <div className="card">
+        <h1>{title}</h1>
+        {/* <div className="card-title">{title}</div> */}
+        <div className="card-remove">
+          <i className="material-icons" onMouseDown={remove}>
+            &#xE5CD;
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 // Select component.
 export const Select = ({ values, onChange }) => (
   <div className="control">

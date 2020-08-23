@@ -1,12 +1,22 @@
 /* React */
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 /* Muuri-react */
 import { MuuriComponent } from "muuri-react";
 /* Utils & components */
 import { generateItems, options } from "./utils";
-import { Select, Header, Footer, Button, Demo, Item } from "./components";
+import {
+  Select,
+  Header,
+  Footer,
+  Button,
+  Demo,
+  Item,
+  Tweet,
+} from "./components";
 /* Style */
 import "./style.css";
+
+const url = `https://my-json-server.typicode.com/barhoring/social-wall-data/db`;
 
 // App.
 const App = () => {
@@ -15,6 +25,7 @@ const App = () => {
 
   // Items state.
   const [items, setItems] = useState(generateItems());
+  const [tweets, setTweets] = useState();
 
   // Sort state.
   const [sort, setSort] = useState({
@@ -22,9 +33,19 @@ const App = () => {
     value: "title",
   });
 
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        debugger;
+        setTweets(res.tweets);
+      });
+  }, []);
+
   // Children.
   const children = items.map(({ id, color, title, width, height }) => (
-    <Item
+    <Tweet
       key={id}
       color={color}
       title={title}
