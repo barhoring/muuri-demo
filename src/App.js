@@ -52,6 +52,7 @@ const App = () => {
           key={tweetId}
           title={title}
           tweet={tweet}
+          image={sourceImage}
           // color={color}
           // width={width}
           // height={height}

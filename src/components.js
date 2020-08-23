@@ -20,20 +20,64 @@ export const Item = ({ color, width, height, title, remove }) => (
 export const Tweet = ({
   tweet,
   color = "blue",
-  width = "2",
+  width = "3",
   height = "2",
+  image,
   title,
   remove,
 }) => (
   <div className={`item h${height} w${width} ${color}`}>
     <div className="item-content">
       {/* <div className="card" style={{ height: "auto" }}> */}
-      <div className="card2">
+      <div className="card2" style={{ padding: "5px" }}>
         {/* <h1>{title}</h1> */}
-        {title}
-        {tweet}
-        <TwitterIcon />
-        <div className="card-title"></div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            <img
+              src={image}
+              style={{
+                height: "50px",
+                width: "50px",
+                borderRadius: "999px",
+                boxShadow: "rgba(0, 0, 0, 0.02) 0px 0px 2px inset",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              border: "2px solid",
+              fontStyle: "italic",
+              padding: "10px",
+            }}
+          >
+            {tweet}
+          </div>
+
+          <div
+            // style={{
+            //   right: 0,
+            //   position: "absolute",
+            //   bottom: "0",
+            //   fontSize: "3rem",
+            //   border: "1px solid",
+            //   padding: "5px",
+            // }}
+            style={{
+              fontSize: "2rem",
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <TwitterIcon />
+          </div>
+        </div>
         <div className="card-remove">
           <i className="material-icons" onMouseDown={remove}>
             &#xE5CD;

@@ -89,8 +89,16 @@
   height: 220px;
   /* line-height: 220px; */
 }
+.item.h2 {
+  height: 280px;
+  /* line-height: 220px; */
+}
 .item.w2 {
   width: 220px;
+}
+
+.item.w3 {
+  width: 280px;
 }
 .item-content {
   position: relative;
@@ -130,7 +138,7 @@
   font-weight: 300;
   background-color: rgba(255, 255, 255, 0.9);
   border: 3px solid;
-  color: purple;
+  color: #1da1f2;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
