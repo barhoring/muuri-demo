@@ -57,7 +57,7 @@
 }
 .item {
   display: none;
-  position: absolute;
+  /* position: absolute; */
   width: 100px;
   height: 100px;
   /* line-height: 100px; */
@@ -101,13 +101,13 @@
   width: 280px;
 }
 .item-content {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
 }
 .card {
   /* padding: 0 20px 0 20px; */
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   top: 0;
   right: 0;
@@ -134,7 +134,14 @@
   height: 100%;
 }
 
-user-image-container {
+.user-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 999px;
+  box-shadow: darkblue 2px 2px 2px 2px inset;
+}
+
+.user-image-container {
   display: "flex";
   margin-bottom: 12px;
   justify-content: flex-start;
@@ -142,6 +149,19 @@ user-image-container {
 .user-message {
   margin-top: 10px;
   padding: 0 20px 0 20px;
+}
+
+.tweet {
+  border: 2px solid;
+  font-style: italic;
+  padding: 10px;
+}
+.icon {
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .item.red .card {
@@ -159,7 +179,7 @@ user-image-container {
 }
 
 .card-id {
-  position: absolute;
+  /* position: absolute; */
   left: 7px;
   top: 0;
   height: 30px;

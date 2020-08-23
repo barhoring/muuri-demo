@@ -27,7 +27,8 @@ export const Tweet = ({
   title,
   remove,
 }) => (
-  <div className={`item h${height} w${width} ${color}`}>
+  // <div className={`item h${height} w${width} ${color}`}>
+  <div className="item" style={{ width: "200px", height: "auto" }}>
     <div className="item-content">
       <div className="card">
         <div
@@ -38,35 +39,12 @@ export const Tweet = ({
         >
           <div className="user-message">
             <div className="user-image-container">
-              <img
-                src={image}
-                style={{
-                  height: "50px",
-                  width: "50px",
-                  borderRadius: "999px",
-                  boxShadow: "rgba(0, 0, 0, 0.02) 0px 0px 2px inset",
-                }}
-              />
+              <img src={image} className="user-image" />
             </div>
-            <div
-              style={{
-                border: "2px solid",
-                fontStyle: "italic",
-                padding: "10px",
-                boxShadow: "5px 10px",
-              }}
-            >
-              {tweet}
-            </div>
+            <div className="tweet">{tweet}</div>
           </div>
 
-          <div
-            style={{
-              fontSize: "2rem",
-              display: "flex",
-              justifyContent: "flex-end",
-            }}
-          >
+          <div className="icon">
             <TwitterIcon />
           </div>
         </div>
