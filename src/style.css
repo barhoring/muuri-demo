@@ -1,5 +1,5 @@
 /* * {
-  border-style: solid;
+  border: 1px solid black;
 } */
 
 /* demo-grid.css */
@@ -106,27 +106,7 @@
   height: 100%;
 }
 .card {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  word-wrap: break-word;
-  font-size: 24px;
-  font-weight: 300;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid;
-  color: purple;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  width: auto;
-}
-.card2 {
+  /* padding: 0 20px 0 20px; */
   position: absolute;
   left: 0;
   top: 0;
@@ -146,6 +126,24 @@
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+.card .content {
+  /* color: cadetblue; */
+  /* color: green; */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+user-image-container {
+  display: "flex";
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+.user-message {
+  margin-top: 10px;
+  padding: 0 20px 0 20px;
+}
+
 .item.red .card {
   color: #f94a7a;
 }
