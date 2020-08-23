@@ -1,3 +1,7 @@
+/* * {
+  border-style: solid;
+} */
+
 /* demo-grid.css */
 /* Controls */
 * {
@@ -56,7 +60,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  line-height: 100px;
+  /* line-height: 100px; */
   margin: 10px;
   z-index: 1;
   will-change: transform;
@@ -83,7 +87,7 @@
 
 .item.h2 {
   height: 220px;
-  line-height: 220px;
+  /* line-height: 220px; */
 }
 .item.w2 {
   width: 220px;
@@ -100,11 +104,33 @@
   right: 0;
   bottom: 0;
   text-align: center;
+  word-wrap: break-word;
   font-size: 24px;
   font-weight: 300;
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid;
-  color: #333;
+  color: purple;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  width: auto;
+}
+.card2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 12px;
+  font-weight: 300;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid;
+  color: purple;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -131,7 +157,7 @@
   left: 7px;
   top: 0;
   height: 30px;
-  line-height: 30px;
+  /* line-height: 30px; */
   text-align: left;
   font-size: 16px;
   font-weight: 400;
@@ -225,7 +251,7 @@ body {
   position: relative;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   margin: 0 20px;
   color: #6e6e6e;
 }

@@ -44,16 +44,23 @@ const App = () => {
   }, []);
 
   // Children.
-  const children = items.map(({ id, color, title, width, height }) => (
-    <Tweet
-      key={id}
-      color={color}
-      title={title}
-      width={width}
-      height={height}
-      remove={() => setItems(items.filter((item) => item.id !== id))}
-    />
-  ));
+  const children =
+    tweets &&
+    tweets.map(
+      ({ tweetId, title, tweet, sourceImage, sourceName, tweetTime }) => (
+        <Tweet
+          key={tweetId}
+          title={title}
+          tweet={tweet}
+          // color={color}
+          // width={width}
+          // height={height}
+          remove={() =>
+            setItems(items.filter((item) => item.tweetId !== tweetId))
+          }
+        />
+      )
+    );
 
   return (
     <Demo>

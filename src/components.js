@@ -1,5 +1,5 @@
 import React from "react";
-
+import { TwitterIcon } from "./icons";
 // Item component.
 export const Item = ({ color, width, height, title, remove }) => (
   <div className={`item h${height} w${width} ${color}`}>
@@ -17,12 +17,23 @@ export const Item = ({ color, width, height, title, remove }) => (
 );
 
 // Tweet component.
-export const Tweet = ({ color, width, height, title, remove }) => (
+export const Tweet = ({
+  tweet,
+  color = "blue",
+  width = "2",
+  height = "2",
+  title,
+  remove,
+}) => (
   <div className={`item h${height} w${width} ${color}`}>
     <div className="item-content">
-      <div className="card">
-        <h1>{title}</h1>
-        {/* <div className="card-title">{title}</div> */}
+      {/* <div className="card" style={{ height: "auto" }}> */}
+      <div className="card2">
+        {/* <h1>{title}</h1> */}
+        {title}
+        {tweet}
+        <TwitterIcon />
+        <div className="card-title"></div>
         <div className="card-remove">
           <i className="material-icons" onMouseDown={remove}>
             &#xE5CD;
