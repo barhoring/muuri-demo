@@ -12,9 +12,11 @@ import {
   Demo,
   Item,
   Tweet,
+  Commit,
 } from "./components";
 /* Style */
 import "./style.css";
+import { TwitterIcon } from "./icons";
 
 const url = `https://my-json-server.typicode.com/barhoring/social-wall-data/db`;
 
@@ -26,6 +28,7 @@ const App = () => {
   // Items state.
   const [items, setItems] = useState(generateItems());
   const [tweets, setTweets] = useState();
+  const [commits, setCommits] = useState();
 
   // Sort state.
   const [sort, setSort] = useState({
@@ -40,11 +43,26 @@ const App = () => {
         console.log(res);
         debugger;
         setTweets(res.tweets);
+        setCommits(res.commits);
       });
   }, []);
 
   // Children.
-  const children =
+
+  const commitChildren =
+    commits &&
+    commits.map(
+      ({
+        issueId,
+        title,
+        status,
+        devName,
+        devMergeCount,
+        devImage,
+        commitTime,
+      }) => <Commit title={title} image={devImage} />
+    );
+  const tweetChildren =
     tweets &&
     tweets.map(
       ({ tweetId, title, tweet, sourceImage, sourceName, tweetTime }) => (
@@ -62,6 +80,11 @@ const App = () => {
         />
       )
     );
+  let children = [];
+  if (tweetChildren) children = children.concat(tweetChildren);
+  if (commitChildren) children = children.concat(commitChildren);
+
+  debugger;
 
   return (
     <Demo>

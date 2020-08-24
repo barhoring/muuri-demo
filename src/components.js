@@ -1,5 +1,5 @@
 import React from "react";
-import { TwitterIcon } from "./icons";
+import { TwitterIcon, GithubIcon } from "./icons";
 
 // Item component.
 export const Item = ({ color, width, height, title, remove }) => (
@@ -46,6 +46,47 @@ export const Tweet = ({
 
           <div className="icon">
             <TwitterIcon />
+          </div>
+        </div>
+        <div className="card-remove">
+          <i className="material-icons" onMouseDown={remove}>
+            &#xE5CD;
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Commit component.
+export const Commit = ({
+  issueId,
+  title,
+  status,
+  devName,
+  devMergeCount,
+  image,
+  commitTime,
+  remove,
+}) => (
+  <div className="item" style={{ width: "200px", height: "auto" }}>
+    <div className="item-content">
+      <div className="card">
+        <div
+          style={{
+            display: "flex",
+          }}
+          className="content"
+        >
+          <div className="user-message">
+            <div className="user-image-container">
+              <img src={image} className="user-image" />
+            </div>
+            <div className="tweet">{title}</div>
+          </div>
+
+          <div className="icon">
+            <GithubIcon />
           </div>
         </div>
         <div className="card-remove">
