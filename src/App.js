@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MuuriComponent } from "muuri-react";
 /* Utils & components */
 import { generateItems, options } from "./utils";
+import { shuffle } from "lodash";
 import {
   Select,
   Header,
@@ -60,7 +61,7 @@ const App = () => {
         devMergeCount,
         devImage,
         commitTime,
-      }) => <Commit title={title} image={devImage} />
+      }) => <Commit title={title} image={devImage} status={status} />
     );
   const tweetChildren =
     tweets &&
@@ -71,9 +72,6 @@ const App = () => {
           title={title}
           tweet={tweet}
           image={sourceImage}
-          // color={color}
-          // width={width}
-          // height={height}
           remove={() =>
             setItems(items.filter((item) => item.tweetId !== tweetId))
           }
@@ -83,7 +81,7 @@ const App = () => {
   let children = [];
   if (tweetChildren) children = children.concat(tweetChildren);
   if (commitChildren) children = children.concat(commitChildren);
-
+  let children2 = shuffle(children);
   debugger;
 
   return (
@@ -119,7 +117,7 @@ const App = () => {
         sort={sort.value === "drag" ? sort.keys : sort.value}
         propsToData={({ color, title }) => ({ color, title })}
       >
-        {children}
+        {children2}
       </MuuriComponent>
       {/* Footer */}
       <Footer>

@@ -55,6 +55,19 @@
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
+
+.status-open {
+  background-color: green;
+  color: white;
+  display: initial;
+}
+
+.status-merged {
+  background-color: purple;
+  color: white;
+  display: initial;
+}
+
 .item {
   display: none;
   /* position: absolute; */
@@ -134,6 +147,10 @@
   height: 100%;
 }
 
+.github-card {
+  color: #24292e;
+}
+
 .user-image {
   height: 50px;
   width: 50px;
@@ -160,8 +177,9 @@
   font-size: 2rem;
   display: flex;
   justify-content: flex-end;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 10px 10px 10px 10px;
+  /* margin-right: 5px; */
+  /* margin-bottom: 5px; */
 }
 
 .item.red .card {

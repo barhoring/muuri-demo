@@ -71,7 +71,7 @@ export const Commit = ({
 }) => (
   <div className="item" style={{ width: "200px", height: "auto" }}>
     <div className="item-content">
-      <div className="card">
+      <div className="card github-card">
         <div
           style={{
             display: "flex",
@@ -83,6 +83,7 @@ export const Commit = ({
               <img src={image} className="user-image" />
             </div>
             <div className="tweet">{title}</div>
+            <div className={`status-${status}`}>{status.toUpperCase()}</div>
           </div>
 
           <div className="icon">
